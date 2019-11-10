@@ -12,6 +12,7 @@ export class GetTodo extends Component {
             isLoading: true,
             isError: false,
             webDatas: "",
+            isShowEdit: false,
             itemId: "0",
             isComplete: false,
             name: ""
@@ -32,7 +33,7 @@ export class GetTodo extends Component {
 
     getItems() {
         if (this.state.isLoading === false) {
-            this.setState(state => ({ isLoading: true, isError: false }));
+            this.setState(state => ({ isLoading: true, isError: false, isShowEdit: false }));
         }
 
         let url = "api/TodoItems";
@@ -50,6 +51,7 @@ export class GetTodo extends Component {
 
     handleEditClick(id, isComplete, name) {
         this.setState(state => ({
+            isShowEdit: true,
             itemId: id,
             isComplete: isComplete,
             name: name
@@ -61,7 +63,9 @@ export class GetTodo extends Component {
         let message;
         if (this.state.isLoading) {
             console.log("loading...");
-            message = <p id="message"><i className="fas fa-spinner"></i> 載入中</p>;
+            message = (<div class="spinner-border" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>);
             todoList = <WebMessage message={message} />;
         }
         else {
@@ -78,43 +82,44 @@ export class GetTodo extends Component {
                 const noDatas = (<div class="alert alert-light" role="alert">
                     There are no items.
               </div>);
-                todoList = (<div>
-                    <AddTodoItem reGetTodo={this.updateTodoList} />
-                    <EditItem reGetTodo={this.updateTodoList} itemId={this.state.itemId} isComplete={this.state.isComplete} name={this.state.name} />
 
-                    <h3>Todo List</h3>
-                    <table class="table">
-                        <thead class="thead-dark">
-                            <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">IsComplete</th>
-                                <th scope="col">Name</th>
-                                <th scope="col"></th>
-                                <th scope="col"></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {webDatas.length > 0 ? todoItems : noDatas}
-                        </tbody>
-                    </table>
+                const editStyle = {
+                    visibility: 'hidden'
+                };
 
+                todoList = (
+                    <>
+                        <AddTodoItem reGetTodo={this.updateTodoList} />
 
+                        <EditItem editStyle={this.state.isShowEdit ? null : editStyle} reGetTodo={this.updateTodoList} itemId={this.state.itemId} isComplete={this.state.isComplete} name={this.state.name} />
 
-
-                    {/* <div className="todo-list">
                         <h3>Todo List</h3>
-                        <div className="title-name">
-                            <p>IsComplete</p>
-                            <p>Name</p>
-                        </div>
-                        {webDatas.length > 0 ? todoItems : "There are no items."}
-                    </div> */}
-                </div>
+                        <table class="table">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">IsComplete</th>
+                                    <th scope="col">Name</th>
+                                    <th scope="col"></th>
+                                    <th scope="col"></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {webDatas.length > 0 ? todoItems : noDatas}
+                            </tbody>
+                        </table>
+                    </>
                 );
             }
         }
 
-        return (todoList);
+        return (
+            <div className="section">
+                <div className="container">
+                    {todoList}
+                </div>
+            </div>
+        );
     }
 }
 

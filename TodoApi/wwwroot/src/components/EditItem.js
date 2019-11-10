@@ -65,8 +65,8 @@ export class EditItem extends Component {
 
     render() {
         return (
-            <div className="edit-form">
-                <div className="input-group mb-3">
+            <div className="edit-form" style={this.props.editStyle} >
+                <div className="input-group input-group-sm mb-3">
                     <div className="input-group-prepend">
                         <span className="input-group-text" id="inputGroup-sizing-sm">Edite</span>
                     </div>
@@ -75,7 +75,7 @@ export class EditItem extends Component {
                             <input type="checkbox" className="edit-isComplete" checked={this.state.isComplete} onChange={this.handleIsCompleteChange} />
                         </div>
                     </div>
-                    <input className="edit-name form-control" value={this.state.editItem} onChange={this.handleIsEditChange} />
+                    <input className="edit-name" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" value={this.state.editItem} onChange={this.handleIsEditChange} />
                     <div className="input-group-append">
                         <button className="save-button btn btn-outline-secondary" onClick={this.handleUpdateClick}>save</button>
                     </div>

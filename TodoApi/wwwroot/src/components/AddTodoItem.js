@@ -53,7 +53,7 @@ export class AddTodoItem extends Component {
                     <div className="input-group-prepend">
                         <span className="input-group-text" id="inputGroup-sizing-sm">Add</span>
                     </div>
-                    <input type="text" id="add-name" classNameName="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" placeholder="New to-do" onChange={this.handleAddChange} value={this.state.newItem} />
+                    <input type="text" id="add-name" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" placeholder="New to-do" onChange={this.handleAddChange} value={this.state.newItem} />
                     <div className="input-group-append">
                         <button className="add-button btn btn-outline-secondary" onClick={this.handleAddClick}>Add</button>
                     </div>

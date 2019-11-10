@@ -6,7 +6,7 @@ export class App extends Component {
         return (
             <div>
                 <nav className="navbar navbar-dark bg-dark">
-                    <h1 class="navbar-brand mb-0 h1">To-do CRUD App</h1>
+                    <span class="navbar-brand mb-0 h1"><h1>To-do CRUD App</h1></span>
                 </nav>
                 <GetTodo />
             </div>
