@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/apple/Documents/GitHub/build_Web_API_useing_dotNet/TodoApi/TodoApi.csproj": {}
+    "/Users/apple/Documents/GitHub/WebAPI_.NetCore_React_VSCode/TodoApi/TodoApi.csproj": {}
   },
   "projects": {
-    "/Users/apple/Documents/GitHub/build_Web_API_useing_dotNet/TodoApi/TodoApi.csproj": {
+    "/Users/apple/Documents/GitHub/WebAPI_.NetCore_React_VSCode/TodoApi/TodoApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/apple/Documents/GitHub/build_Web_API_useing_dotNet/TodoApi/TodoApi.csproj",
+        "projectUniqueName": "/Users/apple/Documents/GitHub/WebAPI_.NetCore_React_VSCode/TodoApi/TodoApi.csproj",
         "projectName": "TodoApi",
-        "projectPath": "/Users/apple/Documents/GitHub/build_Web_API_useing_dotNet/TodoApi/TodoApi.csproj",
+        "projectPath": "/Users/apple/Documents/GitHub/WebAPI_.NetCore_React_VSCode/TodoApi/TodoApi.csproj",
         "packagesPath": "/Users/apple/.nuget/packages/",
-        "outputPath": "/Users/apple/Documents/GitHub/build_Web_API_useing_dotNet/TodoApi/obj/",
+        "outputPath": "/Users/apple/Documents/GitHub/WebAPI_.NetCore_React_VSCode/TodoApi/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/apple/.nuget/NuGet/NuGet.Config"
@@ -40,19 +40,23 @@
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[3.0.0, )"
+              "version": "[3.1.0, )"
             },
             "Microsoft.EntityFrameworkCore.InMemory": {
               "target": "Package",
               "version": "[3.0.0, )"
             },
+            "Microsoft.EntityFrameworkCore.SQLite": {
+              "target": "Package",
+              "version": "[3.1.0, )"
+            },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[3.0.0, )"
+              "version": "[3.1.0, )"
             },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
-              "version": "[3.0.0, )"
+              "version": "[3.1.0, )"
             }
           },
           "imports": [
